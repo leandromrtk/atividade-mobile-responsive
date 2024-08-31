@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de Anotações</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="manifest" href="manifest.json">
+    
+    
+</head>
+<body>
+    <header>
+        <h1>Gestão de Anotações</h1>
+    </header>
+
+    <main>
+        <section id="task-form">
+            <h2>Adicionar Nova Anotação</h2>
+            <form id="new-task-form">
+                <input type="text" id="task-title" placeholder="Anotação" required>
+                <textarea id="task-desc" placeholder="Descrição"></textarea>
+                <input type="date" id="task-date" required>
+                <button type="submit">Adicionar</button>
+            </form>
+        </section>
+
+        <section id="task-list">
+            <h2>Anotações</h2>
+            <ul id="tasks">
+                
+            </ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker registrado', reg))
+        .catch(err => console.error('Erro no registro do Service Worker', err));
+      }
+    </script>
+</body>
+</html>
